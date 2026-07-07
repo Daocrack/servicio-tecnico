@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/oxapampavirtual/servicio-tecnico/
+    - /bin/cp -R %PROJECT_ROOT%/* $DEPLOYPATH
+    - cd $DEPLOYPATH && npm install
+    - cd $DEPLOYPATH && npm run build
