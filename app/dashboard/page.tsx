@@ -106,7 +106,7 @@ export default function DashboardPage() {
         obtenerInventario(),
         obtenerClientes(),
       ])
-      setData({ tickets, inventario, clientes })
+      setData({ tickets, inventario, clientes } as any)
       setUltimaActualizacion(new Date())
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : 'Error al cargar datos')

@@ -57,7 +57,7 @@ export default function CatalogoPage() {
         setLoading(true); setError(null)
         const { obtenerInventario } = await import('@/lib/db')
         const data = await obtenerInventario()
-        setProductos(data as ItemInventario[])
+        setProductos((data as unknown) as ItemInventario[])
       } catch (e: unknown) {
         setError(e instanceof Error ? e.message : 'Error al cargar catálogo')
       } finally {
